@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Matches</title>
+</head>
+<body>
+    <h1>Matches</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Team 1</th>
+            <th>Team 2</th>
+            <th>Date</th>
+            <th>Winner</th>
+        </tr>
+        {% for match in matches %}
+        <tr>
+            <td>{{ match.id }}</td>
+            <td>{{ match.team1 }}</td>
+            <td>{{ match.team2 }}</td>
+            <td>{{ match.date }}</td>
+            <td>{{ match.winner if match.winner else "Pending" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back to Home</a>
+</body>
+</html>
